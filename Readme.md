@@ -1,6 +1,6 @@
 # About
 
-Latest version of my CV, adapted from the template and style file from Adrien Friggeri. 
+Latest version of my CV, adapted from the template and style file from Adrien Friggeri, [https://github.com/afriggeri/cv](https://github.com/afriggeri/cv)
 
 Not using the Helvetica, but some free fonts, also using colors inspired by Monokai (there is an `print` option which renders in black and white, and reverts the header to dark on light, if printing on paper is needed).
 
