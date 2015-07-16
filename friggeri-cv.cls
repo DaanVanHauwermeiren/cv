@@ -26,6 +26,7 @@
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
+\definecolor{yellow}{HTML}{F5D157}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -33,6 +34,7 @@
   \colorlet{purple}{gray}
   \colorlet{red}{gray}
   \colorlet{blue}{gray}
+  \colorlet{yellow}{gray}  
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
@@ -101,7 +103,8 @@
         red\or%
         orange\or%
         green\or%
-        purple\else%
+        purple\or%
+        yellow\else%
         headercolor\fi%
     } #1#2#3%
   }%
@@ -117,15 +120,13 @@
   \par\vspace{\parskip}
 }
 
-\renewcommand{\subsection}[2]{
-  \par\vspace{.5\parskip}%
-  \Large\headingfont\color{headercolor} #2%
-  \par\vspace{.25\parskip}%
-}
-
-\renewcommand\subsubsection{%
-  \@startsection{subsubsection}{3}{\z@\hspace{0.5ex}}{0.1ex \@plus 1ex \@minus .2ex}%
-  {.1ex\vspace{0.1ex}}{\headingfont\large\bfseries}}
+%\renewcommand{\subsection}[2]{
+%  \par\vspace{.5\parskip}%
+%  \Large\headingfont\color{headercolor} #2%
+%  \par\vspace{.25\parskip}%
+%}
+\renewcommand\subsection{%
+  \@startsection{subsection}{2}{0pt}{0.5ex \@plus 1ex \@minus .2ex}{.3ex\vspace{0.1ex}}{\headingfont\Large\bfseries}}
 
 \pagestyle{empty}
 
@@ -213,8 +214,6 @@
     \usebibmacro{journal+issuetitle}%
     \setunit{\addcomma\space}%
     \printfield{pages}%
-    \newunit%
-    \printlist{publisher}%
     \setunit*{\addcomma\space}%
     \printfield{year}%
     \newunit%
@@ -231,10 +230,12 @@
   {%
     \footnotesize\addfontfeature{Color=lightgray}%
     \printfield{booktitle}%
-    \setunit{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
+    \setunit{\space}%  
+    	\usebibmacro{byeditor+others}%
+    \newunit%
     \printlist{location}%
+    \setunit{\addcomma\space}%
+    \usebibmacro{date}%    
     \newunit%
   }
   \par\vspace{0.3\baselineskip}

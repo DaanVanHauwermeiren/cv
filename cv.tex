@@ -45,7 +45,7 @@
 water research, environmental modelling, open science, visualisations, python, scientific computing, reproducibility, uncertainty \& sensitivity analysis, teaching, optimization, data science, open knowledge
 
 \section{education}
-\subsubsection*{study program}
+\subsection*{study program}
 \begin{entrylist}
   \entry
     {since 2008}
@@ -75,7 +75,7 @@ water research, environmental modelling, open science, visualisations, python, s
     {Science and Mathematics}
 \end{entrylist}
 
-\subsubsection*{additional courses}
+\subsection*{additional courses}
 \begin{entrylist}
   \shortentry
     {2014}
@@ -131,7 +131,7 @@ water research, environmental modelling, open science, visualisations, python, s
 \pagebreak
 
 \section{teaching}
-\subsubsection*{courses}
+\subsection*{courses}
 \begin{entrylist}
 %  \entry
 %    {2015}
@@ -190,7 +190,7 @@ water research, environmental modelling, open science, visualisations, python, s
     {exercise lectures, M.Sc. Bioscience Engineering}
 \end{entrylist}
 
-\subsubsection*{tutorship}
+\subsection*{tutorship}
 \begin{entrylist}
   \entry
     {2014-2015}
@@ -242,18 +242,25 @@ water research, environmental modelling, open science, visualisations, python, s
 %Currently mainly active on \href{https://github.ugent.be/stvhoey}{github.ugent.be}, but the developments made within the framework of the phd will be licensed as open source on my \href{https://github.com/stvhoey}{personal Github account}.
 
 \section{publications}
-
 \nocite{*}
-\printbibsection{article}{article in peer-reviewed journal}
+\printbibsection{article}{articles in peer-reviewed journal}
 \begin{refsection}
   \nocite{*}
-  \printbibliography[sorting=chronological, type=inproceedings, title={international peer-reviewed conferences/proceedings}, notkeyword={france}, heading=subbibliography]
+  \printbibliography[sorting=chronological, type=inproceedings, title={peer-reviewed conferences/proceedings}, notkeyword={oral}, notkeyword={poster},heading=subbibliography]
 \end{refsection}
-%\begin{refsection}
-%  \nocite{*}
-%  \printbibliography[sorting=chronological, type=inproceedings, title={local peer-reviewed conferences/proceedings}, keyword={france}, heading=subbibliography]
-%\end{refsection}
-%\printbibsection{misc}{other publications}
-%\printbibsection{report}{research reports}
+
+\begin{refsection}
+  \nocite{*}
+  \printbibliography[sorting=chronological, type=inproceedings, title={presentations}, keyword={oral}, heading=subbibliography]
+\end{refsection}
+
+\begin{refsection}
+  \nocite{*}
+  \printbibliography[sorting=chronological, type=inproceedings, title={posters}, keyword={poster}, heading=subbibliography]
+\end{refsection}
+
+\printbibsection{report}{scientific consulting}
+
+% hier ook je thesis en ba-rapport toevoegen
 
 \end{document}
