@@ -189,6 +189,18 @@
 \DeclareFieldFormat[inproceedings]{title}{#1\par}
 \DeclareFieldFormat[misc]{title}{#1\par}
 \DeclareFieldFormat[report]{title}{#1\par}
+%\renewbibmacro{<name>}{<instructions>}
+
+    \renewbibmacro*{journal+issuetitle}{%
+      \usebibmacro{journal}%
+      \setunit*{\addcomma\space}%
+      \iffieldundef{series}
+        {}
+        {\newunit
+         \printfield{series}%
+         \setunit{\addspace}}%
+      \usebibmacro{volume+number+eid}%
+      \newunit}
 
 \DeclareBibliographyDriver{article}{%
   \printfield{title}%
@@ -199,7 +211,7 @@
   {%
     \footnotesize\addfontfeature{Color=lightgray}\itshape%
     \usebibmacro{journal+issuetitle}%
-    \setunit{\space}%
+    \setunit{\addcomma\space}%
     \printfield{pages}%
     \newunit%
     \printlist{publisher}%
