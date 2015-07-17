@@ -190,7 +190,7 @@
   \renewcommand{\subsection}[1]{%
     \vspace{0.2cm}{\large\headingfont\color{headercolor} ##1}%
   }
-  \newcommand{\devitem}[2]{%
+  \newcommand{\devitem}[2]{\vspace{0.3ex}%
   ##1\\%
   {\footnotesize\addfontfeature{Color=lightgray} ##2}
   }
