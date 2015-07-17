@@ -103,8 +103,8 @@
         red\or%
         orange\or%
         green\or%
-        purple\or%
-        yellow\else%
+        yellow\or%
+        purple\else%
         headercolor\fi%
     } #1#2#3%
   }%
@@ -165,6 +165,7 @@
 \RequirePackage[absolute,overlay]{textpos}
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
+
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
@@ -180,11 +181,37 @@
   \let\section\oldsection
 }
 
+\newenvironment{aside2}{%
+  \let\oldsection\section % save the definition under other name
+  \renewcommand{\section}[1]{%
+    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}%
+  }
+  \let\oldsubsection\subsection
+  \renewcommand{\subsection}[1]{%
+    \vspace{0.2cm}{\large\headingfont\color{headercolor} ##1}%
+  }
+  \newcommand{\devitem}[2]{%
+  ##1\\%
+  {\footnotesize\addfontfeature{Color=lightgray} ##2}
+  }
+  \begin{textblock}{4.2}(0.9, 1.5)
+  \begin{flushright}
+  \obeycr
+}{%
+  \restorecr
+  \end{flushright}
+  \end{textblock}
+  \let\section\oldsection
+  \let\subsection\oldsubsection  
+}
+
 %%%%%%%%%%%%%%%%
 % Bibliography %
 %%%%%%%%%%%%%%%%
 
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
+\setlength{\bibhang}{0pt}
+\usepackage{multicol}
 
 \DeclareFieldFormat[article]{title}{#1\par}
 \DeclareFieldFormat[inproceedings]{title}{#1\par}
@@ -195,9 +222,9 @@
     \renewbibmacro*{journal+issuetitle}{%
       \usebibmacro{journal}%
       \setunit*{\addcomma\space}%
-      \iffieldundef{series}
-        {}
-        {\newunit
+      \iffieldundef{series}%
+        {}%
+        {\newunit%
          \printfield{series}%
          \setunit{\addspace}}%
       \usebibmacro{volume+number+eid}%
@@ -205,7 +232,7 @@
 
 \DeclareBibliographyDriver{article}{%
   \printfield{title}%
-  \newblock%
+  \newblock
   \printnames{author}%
   \par%
   \newblock%
@@ -217,8 +244,8 @@
     \setunit*{\addcomma\space}%
     \printfield{year}%
     \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+  }%
+  \par\vspace{0.3\baselineskip}%
 }
 
 \DeclareBibliographyDriver{inproceedings}{%
@@ -237,8 +264,8 @@
     \setunit{\addcomma\space}%
     \usebibmacro{date}%    
     \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+  }%
+  \par\vspace{0.3\baselineskip}%
 }
 
 \DeclareBibliographyDriver{misc}{%
@@ -249,7 +276,7 @@
   \newblock%
   {%
     \footnotesize\addfontfeature{Color=lightgray}\itshape%
-    \printfield{booktitle}%
+    \printfield{book title}%
     \setunit*{\addcomma\space}%
     \printfield{note}%
     \setunit*{\addcomma\space}%
@@ -257,26 +284,35 @@
     \setunit{\addcomma\space}%
     \printlist{location}%
     \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+  }%
+  \par\vspace{0.3\baselineskip}%
 }
 
 \DeclareBibliographyDriver{report}{%
   \printfield{title}%
   \newblock%
   \printnames{author}%
+%  \par
+%  {%
+%  \footnotesize\addfontfeature{Color=lightgray}%
+%  \setunit{\space}%    
+%  {in collaboration with \printfield{type}}%
+%  }  
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
-    \printfield{type}%
-    \setunit{\space}%
-    \printfield{number}%
+    \footnotesize\addfontfeature{Color=lightgray}%
+    {%
+    \itshape%
+    \printlist{institution}%
+    }%
+    \setunit{\addcomma\space}%
+    \printlist{location}%    
     \setunit{\addcomma\space}%
     \printfield{year}%
     \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+  }%
+  \par\vspace{0.3\baselineskip}%
 }
 
 \DeclareNameFormat{author}{%

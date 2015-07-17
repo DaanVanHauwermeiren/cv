@@ -38,11 +38,17 @@
    WEST (DHI),
    Gimp, Inkscape,
    Drupal
+   \section{activities}
+   Bike kitchen Ghent
+   Ghent Bike Polo team
+   Instructor in youth work
+   boardgames
+   cycling
+   piano    
 \end{aside}
-
+   
 \section{interests}
-
-water research, environmental modelling, open science, visualisations, python, scientific computing, reproducibility, uncertainty \& sensitivity analysis, teaching, optimization, data science, open knowledge
+water research, environmental modelling, open science, visualisations, python, scientific computing, reproducibility, uncertainty \& sensitivity analysis, teaching, optimization, data science, open knowledge \vspace{\baselineskip}
 
 \section{education}
 \subsection*{study program}
@@ -111,8 +117,8 @@ water research, environmental modelling, open science, visualisations, python, s
     {University Language Centre Ghent, Belgium}
 \end{entrylist}
 
+ \vspace{\baselineskip}
 \section{employment}
-
 \begin{entrylist}
   \shortentry
     {2013-current}
@@ -129,6 +135,17 @@ water research, environmental modelling, open science, visualisations, python, s
 \end{entrylist}
 
 \pagebreak
+\begin{aside2}
+   \section{developments} 
+   \subsection{python}
+   \devitem{\href{https://stijnvanhoey.github.io/hydropy/}{hydropy}}{Tiny package to improve and simplify working with hydrological time series}
+   \devitem{\href{https://github.ugent.be/biomath/pySTAN}{PySTAN}}{Model STructure ANalyst, library with set of functionalities to evaluate model performance (in revision now, \textit{Ugent only})}
+   \devitem{\href{https://github.ugent.be/biomath/pyFUSE}{PyFUSE}}{Flexible model development environment for lumped hydrological models (Ugent only)}   
+   \subsection{webdev}
+   \devitem{\href{http://www.fietskeuken.org}{Fietskeuken Gent}}{HTML \& CSS, Bootstrap}      
+   \devitem{\href{http://www.cest.ugent.be/}{Centre Environmental Science and Technology}}{drupal, php}      
+   \devitem{\href{http://www.b-iwa.be/}{Belgian Committee of the International Water Association}}{drupal}
+\end{aside2}  
 
 \section{teaching}
 \subsection*{courses}
@@ -214,35 +231,12 @@ water research, environmental modelling, open science, visualisations, python, s
     {Stijn Decubber}
 \end{entrylist}
 
-\pagebreak
-\section{developments}
-\begin{entrylist}
-  \entry
-    {2015}
-    {Hydropy}
-    {\href{https://stijnvanhoey.github.io/hydropy/}{Python}}
-    {Tiny package to improve and simplify working with hydrological time series built on top of Python Pandas functionalities}
-  \entry
-    {2014}
-    {pySTAN}
-    {\href{https://github.ugent.be/biomath/pySTAN}{Python}}
-    {Model Structure ANalysist, library with set of functionalities to evaluate model performance (in revision now)}
-  \entry
-    {2012}
-    {pyFUSE}
-    {\href{https://github.ugent.be/biomath/pyFUSE}{Python}}
-    {Flexible model development environment for lumped hydrological models}
-  \entry
-    {since 2009}
-    {webdevelopment}
-    {drupal, php, CSS \& HTML, bootstrap}
-    {\href{http://www.fietskeuken.org}{Fietskeuken Gent}, \href{http://www.b-iwa.be/}{Belgian Committee of the International Water Association} and \href{http://www.cest.ugent.be/}{Centre Environmental Science and Technology}}
-\end{entrylist}
-
-%Currently mainly active on \href{https://github.ugent.be/stvhoey}{github.ugent.be}, but the developments made within the framework of the phd will be licensed as open source on my \href{https://github.com/stvhoey}{personal Github account}.
-
+\newgeometry{left=1.5cm,top=2cm,right=1.5cm,bottom=2.5cm, nohead, nofoot}
+\begin{multicols}{2}
+[
 \section{publications}
-\nocite{*}
+]
+
 \printbibsection{article}{articles in peer-reviewed journal}
 \begin{refsection}
   \nocite{*}
@@ -251,15 +245,17 @@ water research, environmental modelling, open science, visualisations, python, s
 
 \begin{refsection}
   \nocite{*}
-  \printbibliography[sorting=chronological, type=inproceedings, title={presentations}, keyword={oral}, heading=subbibliography]
+  \printbibliography[sorting=chronological, type=inproceedings, title={conference presentations}, keyword={oral}, heading=subbibliography]
 \end{refsection}
 
 \begin{refsection}
   \nocite{*}
-  \printbibliography[sorting=chronological, type=inproceedings, title={posters}, keyword={poster}, heading=subbibliography]
+  \printbibliography[sorting=chronological, type=inproceedings, title={conference posters}, keyword={poster}, heading=subbibliography]
 \end{refsection}
 
 \printbibsection{report}{scientific consulting}
+
+\end{multicols}
 
 % hier ook je thesis en ba-rapport toevoegen
 
