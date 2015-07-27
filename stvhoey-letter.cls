@@ -90,6 +90,27 @@
 % Structure %
 %%%%%%%%%%%%%
 
+\pagestyle{empty}  
+
+% endnotes
+\RequirePackage{endnotes}
+\newcommand\fnurl[2]{%
+  \href{#1}{#2}\endnote{\color{gray}\nolinkurl{#1}}%
+}
+\def\enoteheading{\color{gray}%
+  \mbox{}\par\vskip-2.3\baselineskip\noindent\rule{.5\textwidth}{0.2pt}\par}
+
+\newcommand{\printenotes}{  
+\vfill
+\begingroup
+\parindent 0pt
+\parskip 3pt
+\def\enotesize{\footnotesize}
+\theendnotes
+\endgroup  
+}
+
+% opening and closing
 \renewcommand*{\opening}[1]{\ifx\@empty\fromaddress
   \thispagestyle{firstpage}%
     {\raggedright\@date\par}%
@@ -113,29 +134,15 @@
        \else \fromsig \fi\strut}%
    \par}  
   
-%  \renewcommand*{\opening}[1]{\ifx\@empty\fromaddress
-%  \thispagestyle{firstpage}%
-%    {\raggedright\@date\par}%
-%  \else  % home address
-%    \thispagestyle{empty}%
-%    {\raggedright \begin{tabular}{l@{}}\ignorespaces
-%      \fromaddress \\*[4\parskip]%
-%      \@date \end{tabular}\par}%
-%  \fi
-%  \vspace{4\parskip}%
-%  {\raggedright \toname \\ \toaddress \par}%
-%  \vspace{2\parskip}%
-%  #1\par\nobreak}
-
 \renewenvironment{letter}[1]
   {\if@twoside \ifodd\c@page
-                \else\thispagestyle{empty}\null\newpage\fi
+                \else\thispagestyle{empty}\null\fi
     \fi
     \c@page \@ne
     \c@footnote \z@
     \interlinepenalty=200 % smaller than the TeXbook value
     \@processto{\leavevmode\ignorespaces #1}}
-  {\stopletter\@@par\pagebreak\@@par
+  {\stopletter\@@par\@@par
     \if@filesw
       \begingroup
         \let\\=\relax
