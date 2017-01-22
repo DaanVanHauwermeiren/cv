@@ -1,8 +1,9 @@
-%!TEX TS-program = xelatex
 \documentclass[]{stvhoey-cv}  %[print]
 \addbibresource{bibliography.bib}
 
-\hyphenation{in-fra-struc-tuur-wer-ken}
+\hyphenation{in-fra-struc-tuur-wer-ken qua-li-ty seun-tjens	x}
+
+%\usepackage[utf8]{inputenc}
 
 \begin{document}
 \header{Stijn Van Hoey}{}% Stijn Van Hoey Curriculum vitae
@@ -26,11 +27,9 @@
   European Driving
   Licence B
   \section{programming}
-   Python, % {\color{red} $\varheartsuit$}
-    (numpy, scipy,
-    matplotlib, pandas),
-    Matlab, R, bash,
-    CSS \& HTML,
+   {\color{red} $\varheartsuit$} Python,\\%
+    R, Matlab, bash,
+    HTML \& CSS,
     \LaTeX, md,
     SQL
   \section{software}
@@ -42,7 +41,7 @@
 \end{aside}
    
 \section{interests}
-open science, teaching, data visualisation, python, scientific computing, open data, reproducibility, water research, environmental modelling, uncertainty \& sensitivity analysis, optimization, data science, open knowledge \vspace{\baselineskip}
+open science, teaching, data visualisation, python, scientific computing, water research, open data, reproducibility, environmental modelling, uncertainty \& sensitivity analysis, optimization, data science, open knowledge \vspace{\baselineskip}
 
 \section{education}
 \subsection*{study program}
@@ -51,8 +50,9 @@ open science, teaching, data visualisation, python, scientific computing, open d
     {2008-2016}
     {Ph.D. {\normalfont in Bioscience Engineering}}
     {Biomath, Ghent University \& VITO}
-    {Title: \emph{Development and application of a framework for model structure evaluation in environmental modelling}\\
-    Development of methodologies for improved model structure selection\\ in environmental applications with the focus on water management\\ \small{supervised by Prof dr ir Piet Seuntjens and Prof dr ir Ingmar Nopens}}
+    {\emph{Development and application of a framework for model structure evaluation in environmental modelling}\\ %zenodo.168478.svg
+		\small{supervised by Prof dr ir Piet Seuntjens and Prof dr ir Ingmar Nopens}\\
+		        \href{https://doi.org/10.5281/zenodo.168478}{\includegraphics[height=8pt]{zenodo.pdf}}}
 %  \entry  -> Bsc project en Msc naar de literatuur verhuizen!
 %    {2007-2008}
 %    {Master thesis}
@@ -135,7 +135,7 @@ open science, teaching, data visualisation, python, scientific computing, open d
 \pagebreak
 \begin{aside2}
    \section{developments} 
-   \subsection{python}
+   \subsection{Python}
    \devitem{\href{https://stijnvanhoey.github.io/hydropy/}{hydropy}}{Package to improve and simplify working with hydrological time series}
    \devitem{\href{http://stijnvanhoey.github.io/pyfuse/}{pyfuse}}{Flexible model environment for lumped hydrological models}     
    \devitem{\href{http://stijnvanhoey.github.io/pystran/}{pystran}}{Model STRucture ANalyst, library with set of functionalities to evaluate model characteristics}
@@ -154,7 +154,7 @@ open science, teaching, data visualisation, python, scientific computing, open d
   \entry
     {2016}
     {Data manipulation, analysis and visualisation in Python}
-    {Ghent University}
+    {DS, Ghent University}
     {3-day intensive course in collaboration with Joris Van den Bossche}
   \entry
     {2015}
@@ -266,7 +266,5 @@ open science, teaching, data visualisation, python, scientific computing, open d
 \printbibsection{report}{scientific consulting}
 
 \end{multicols}
-
-% hier ook je thesis en ba-rapport toevoegen
 
 \end{document}
