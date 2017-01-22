@@ -105,7 +105,8 @@
         green\or%
         yellow\or%
         purple\else%
-        headercolor\fi%
+        headercolor%
+       \fi%
     } #1#2#3%
   }%
   \stepcounter{colorCounter}%
@@ -209,7 +210,7 @@
 % Bibliography %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
+\RequirePackage[style=verbose, maxnames=99, sorting=ydnt, backend=biber]{biblatex}
 \setlength{\bibhang}{0pt}
 \usepackage{multicol}
 
@@ -315,13 +316,15 @@
   \par\vspace{0.3\baselineskip}%
 }
 
-%\DeclareNameFormat{author}{%
-%  \small\addfontfeature{Color=lightgray}%
-%  \ifblank{#3}{}{#3\space}#1%
-%  \ifthenelse{\value{listcount}<\value{liststop}}
-%    {\addcomma\space}
-%    {}%
-%}
+\DeclareNameFormat{sortname}{%
+	\small\addfontfeature{Color=gray}%
+    \nameparts{#1}%
+     \usebibmacro{name:family-given}
+      {\namepartfamily}
+      {\namepartgiven}
+      {\namepartprefix}
+      {\namepartsuffix}%
+     }
 
 \newcommand{\printbibsection}[2]{
   \begin{refsection}
